@@ -1,8 +1,9 @@
 import 'package:delivery_app/models/category.dart';
-import 'package:delivery_app/widgets/search.dart';
-import 'package:delivery_app/screens/child_screen.dart';
-import 'package:delivery_app/widgets/category_item.dart';
+import 'package:delivery_app/widgets/categories_screen_content.dart';
+import 'package:delivery_app/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CategoriesScreen extends StatelessWidget{
   const CategoriesScreen({super.key, required this.categories});
@@ -11,74 +12,31 @@ class CategoriesScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-
-    Widget content = Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 25,),
-
-            const Search(),
-
-            const SizedBox(height: 35,),
-
-            Expanded(
-              child: GridView(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 1.7 / 2,
-                  crossAxisSpacing: 20,
-                  mainAxisSpacing: 20,
-                ),
-                children: [
-                  for(final item in categories)
-                    CategoryItem(category: item, onSelectCategory: _onSelectCategory,),
-                ],
+      
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: const Color.fromRGBO(246, 245, 245, 1),
+        appBar: AppBar(
+          toolbarHeight: 60.h,
+          title: Text(
+            'Categories',
+            style: GoogleFonts.roboto(
+              textStyle: TextStyle(
+                fontSize: 34.sp,
+                fontWeight: FontWeight.w700,
+                color: const Color.fromRGBO(45, 12, 87, 1),
               ),
-            )
-          ],
-        ),
-      );
-      
-    return Scaffold(
-      
-      backgroundColor: const Color.fromRGBO(246, 245, 245, 5),
-      appBar: AppBar(
-        title: const Text(
-              'Categories', 
-              style: TextStyle(
-                fontSize: 30, 
-                fontWeight: FontWeight.bold, 
-                color:  Color.fromRGBO(45, 12, 87, 1),
-              ), 
             ),
-        backgroundColor: const Color.fromRGBO(246, 245, 245, 5),
-      ),
-
-      body: content,
+          ),
+          backgroundColor: const Color.fromRGBO(246, 245, 245, 1),
+          forceMaterialTransparency: true,
+          centerTitle: false, 
+        ),
       
-       bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.grid_4x4_outlined), 
-            label: 'Grid',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined), 
-            label: 'Stroller',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_2_outlined), 
-            label: 'Person',
-          )
-        ]
+        body: const SafeArea(child: CategoriesScreenContent()),
+        
+        bottomNavigationBar: const CustomNavigationBar(),
       ),
     );
-  }
-  
-
-  void _onSelectCategory(BuildContext context, String title) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => ChildScreen(title: title)));
   }
 }

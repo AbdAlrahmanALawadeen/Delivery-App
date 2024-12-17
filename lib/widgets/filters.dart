@@ -1,6 +1,7 @@
 import 'package:delivery_app/data/data.dart';
 import 'package:delivery_app/models/filter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Filters extends StatefulWidget{
   const Filters({super.key, required this.parent});
@@ -21,7 +22,8 @@ class _Filters extends State<Filters>{
     List<Filter> children = filterChoices.where((child) => child.parent == widget.parent).toList();
 
     return SizedBox(
-      height: 50, 
+      height: 34.h, 
+      width: MediaQuery.sizeOf(context).width,
       child: ListView.builder( 
         scrollDirection: Axis.horizontal,
         itemCount: children.length,
@@ -43,7 +45,8 @@ class _Filters extends State<Filters>{
               label: Text(
                 '${children[index].title} (${children[index].number})', 
                 style: TextStyle(
-                  color: (children[index].isPressed) == true ? const Color.fromRGBO(45, 12, 87, 1) : const Color.fromRGBO(149, 134, 168, 1),      
+                  color: (children[index].isPressed) == true ? const Color.fromRGBO(45, 12, 87, 1) : const Color.fromRGBO(149, 134, 168, 1),    
+                  fontFamily: 'SFProText'  
                 ),
               ),   
             ),
