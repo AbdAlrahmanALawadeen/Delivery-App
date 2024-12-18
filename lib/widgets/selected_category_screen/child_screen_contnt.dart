@@ -1,3 +1,4 @@
+import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/widgets/filters.dart';
 import 'package:delivery_app/widgets/search.dart';
 import 'package:delivery_app/widgets/selected_category_screen/category_children.dart';
@@ -53,7 +54,7 @@ class _ChildScreenContentState extends State<ChildScreenContent>{
             child: Text(
               widget.title,
               style: TextStyle(
-                fontFamily: 'SFProDisplay',
+                fontFamily: FontFamily.sFProDisplay,
                 fontSize: 30.sp,
                 fontWeight: FontWeight.w700,
               ),

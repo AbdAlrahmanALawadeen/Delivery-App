@@ -26,53 +26,54 @@ class _Images extends State<Images> {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      child: Stack(             
-        children: [
-          CarouselSlider.builder(
-            carouselController: _controller,
-            options: CarouselOptions(
-              viewportFraction: 1,
-              autoPlay: false,
-              onPageChanged: (index, reason){
-                setState(() {
-                  _currentIndex = index;
-                });             
-              }  
+    return Stack(             
+      children: [
+        Positioned(
+          child: SizedBox(
+            width: MediaQuery.sizeOf(context).width,
+            child: CarouselSlider.builder(         
+              carouselController: _controller,
+              options: CarouselOptions(
+                height: 358.h,
+                viewportFraction: 1,
+                autoPlay: false,
+                onPageChanged: (index, reason){
+                  setState(() {
+                    _currentIndex = index;
+                  });             
+                }  
+              ),
+              itemBuilder: (BuildContext context, int index, int realIndex){
+                return Image.asset(pictureUrls[index], width: MediaQuery.sizeOf(context).width, fit: BoxFit.cover,);
+              }, itemCount: pictureUrls.length,
             ),
-            itemBuilder: (BuildContext context, int index, int realIndex){
-              return SizedBox(
-               width: MediaQuery.sizeOf(context).width,
-                child: Image.asset(pictureUrls[index], fit: BoxFit.cover,),
-              );
-            }, itemCount: pictureUrls.length,
           ),
-                      
-          Positioned(
-            top : 258.h,
-            left: 0.0.w,
-            right: 0.0,
-            child: Row(
-              mainAxisAlignment : MainAxisAlignment.center,
-              children: pictureUrls.asMap().entries.map((entery){
-                return GestureDetector(
-                  onTap: () => _controller.animateToPage(entery.key),
-                  child: Container(
-                    width: 8.0.w,
-                    height: 8.0.h,
-                    margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: _currentIndex == entery.key ? Colors.white : const Color.fromARGB(255, 213, 202, 202),
-                    ),
+        ),
+                    
+        Positioned(
+          top : 258.h,
+          left: 0.0.w,
+          right: 0.0,
+          child: Row(
+            mainAxisAlignment : MainAxisAlignment.center,
+            children: pictureUrls.asMap().entries.map((entery){
+              return GestureDetector(
+                onTap: () => _controller.animateToPage(entery.key),
+                child: Container(
+                  width: 8.0.w,
+                  height: 8.0.h,
+                  margin: EdgeInsets.symmetric(horizontal: 4.0.w),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _currentIndex == entery.key ? Colors.white : const Color.fromARGB(255, 213, 202, 202),
                   ),
-                );
-              }
-              ).toList()
-            )
-          ),
-        ],      
-      ),
+                ),
+              );
+            }
+            ).toList()
+          )
+        ),
+      ],      
     );
   }
 }

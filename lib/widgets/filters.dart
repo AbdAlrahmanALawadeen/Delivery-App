@@ -1,4 +1,5 @@
 import 'package:delivery_app/data/data.dart';
+import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/models/filter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -46,7 +47,7 @@ class _Filters extends State<Filters>{
                 '${children[index].title} (${children[index].number})', 
                 style: TextStyle(
                   color: (children[index].isPressed) == true ? const Color.fromRGBO(45, 12, 87, 1) : const Color.fromRGBO(149, 134, 168, 1),    
-                  fontFamily: 'SFProText'  
+                  fontFamily: FontFamily.sFProText 
                 ),
               ),   
             ),

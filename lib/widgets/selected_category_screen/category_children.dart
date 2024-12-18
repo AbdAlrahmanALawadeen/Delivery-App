@@ -1,4 +1,5 @@
 import 'package:delivery_app/data/data.dart';
+import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/models/category_child.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -69,7 +70,7 @@ class _CategorychildrenState extends State<Categorychildren>{
                                 color: const Color.fromRGBO(45, 12, 87, 1), 
                                 fontWeight: FontWeight.w600, 
                                 fontSize: 18.sp,
-                                fontFamily: 'SFProText',
+                                fontFamily: FontFamily.sFProText,
                               ),
                             ),
                             
@@ -81,7 +82,7 @@ class _CategorychildrenState extends State<Categorychildren>{
                                   '${children[index].price} ', 
                                   style: TextStyle(
                                     color: const Color.fromRGBO(45, 12, 87, 1), 
-                                    fontFamily: 'SFProText',
+                                    fontFamily: FontFamily.sFProText,
                                     fontSize: 22.sp,
                                     fontWeight : FontWeight.w700,
                                   )
@@ -92,7 +93,7 @@ class _CategorychildrenState extends State<Categorychildren>{
                                   style: TextStyle(
                                     color: const Color.fromRGBO(149, 134, 168 , 1), 
                                     fontWeight: FontWeight.w400, 
-                                    fontFamily: 'SFProText',
+                                    fontFamily: FontFamily.sFProText,
                                     fontSize: 16.sp
                                   )
                                 )

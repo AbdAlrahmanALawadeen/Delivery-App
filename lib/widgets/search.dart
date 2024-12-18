@@ -1,3 +1,4 @@
+import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -33,7 +34,7 @@ class Search extends StatelessWidget{
           hintStyle: TextStyle(
             color: const Color.fromRGBO(149, 134, 168, 1), 
             fontSize: 17.sp,
-            fontFamily: 'SFProText',
+            fontFamily: FontFamily.sFProText,
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(27), 

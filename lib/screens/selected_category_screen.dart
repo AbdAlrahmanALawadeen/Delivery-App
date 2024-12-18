@@ -1,4 +1,5 @@
 import 'package:delivery_app/data/data.dart';
+import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/widgets/navigation_bar.dart';
 import 'package:delivery_app/widgets/selected_category_screen/child_screen_contnt.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class _ChildScreenState extends State<ChildScreen>{
       content = Center(
         child: Text('No Items Found.',
         style: TextStyle(
-          fontFamily: 'SFProText',
+          fontFamily: FontFamily.sFProText,
           fontSize: 30.sp,
         ),
       ),

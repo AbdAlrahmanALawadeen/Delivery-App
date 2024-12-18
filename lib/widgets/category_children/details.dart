@@ -1,3 +1,4 @@
+import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/models/category_child.dart';
 import 'package:delivery_app/widgets/category_children/description.dart';
 import 'package:delivery_app/widgets/category_children/images.dart';
@@ -21,9 +22,15 @@ class ShowDetails extends StatelessWidget{
           height: MediaQuery.sizeOf(context).height,
           child:  Stack(
             children: [
-              const Images(),
+              Positioned(
+                top: 0.0.h,
+                child: const Images()
+              ),
               // todo
-              Description(categoryChild: categoryChild)
+             Positioned(
+                top: 281.h,
+                child: Description(categoryChild: categoryChild)
+              )
             ],
           )
         );
@@ -33,7 +40,7 @@ class ShowDetails extends StatelessWidget{
         'No Items found',
         style: TextStyle(
           fontSize: 30.sp,
-          fontFamily: 'SFProText',
+          fontFamily: FontFamily.sFProText,
         ),
       );
     }
