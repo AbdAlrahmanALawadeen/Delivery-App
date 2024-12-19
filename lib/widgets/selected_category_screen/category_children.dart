@@ -1,4 +1,4 @@
-import 'package:delivery_app/data/data.dart';
+import 'package:delivery_app/API/http.dart';
 import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/models/category_child.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +19,28 @@ class Categorychildren extends StatefulWidget{
 
 class _CategorychildrenState extends State<Categorychildren>{
   _CategorychildrenState();
+
+  List<Categorychild> categoryChildren = [];
+
+  @override
+  void initState(){
+    super.initState();
+    startApp();
+  }
+
+  void startApp() async {
+    final Api api = Api();
+
+    try {
+      var data = await api.fetchCategoryChild();
+      setState(() {
+        categoryChildren = data;
+      });
+    } 
+    catch (e) {
+      categoryChildren = [];
+    }
+  }
 
   List<Categorychild> children = [];
 

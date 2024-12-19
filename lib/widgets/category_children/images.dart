@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:delivery_app/data/data.dart';
+import 'package:delivery_app/API/http.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,13 +19,31 @@ class _Images extends State<Images> {
 
   final CarouselSliderController _controller = CarouselSliderController();
 
-  final List<String> pictureUrls = List.generate(
-    images.length, 
-    (int index) => images[index],
-  );
+  List<String> images = [];
+
+  @override
+  void initState(){
+    super.initState();
+    startApp();
+  }
+
+  void startApp() async {
+    final Api api = Api();
+
+    try {
+      var data = await api.fetchImages();
+      setState(() {
+        images = data;
+      });
+    } 
+    catch (e) {
+      images = [];
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return Stack(             
       children: [
         Positioned(
@@ -44,8 +62,8 @@ class _Images extends State<Images> {
                 }  
               ),
               itemBuilder: (BuildContext context, int index, int realIndex){
-                return Image.asset(pictureUrls[index], width: MediaQuery.sizeOf(context).width, fit: BoxFit.cover,);
-              }, itemCount: pictureUrls.length,
+                return Image.asset(images[index], width: MediaQuery.sizeOf(context).width, fit: BoxFit.cover,);
+              }, itemCount: images.length,
             ),
           ),
         ),
@@ -56,7 +74,7 @@ class _Images extends State<Images> {
           right: 0.0,
           child: Row(
             mainAxisAlignment : MainAxisAlignment.center,
-            children: pictureUrls.asMap().entries.map((entery){
+            children: images.asMap().entries.map((entery){
               return GestureDetector(
                 onTap: () => _controller.animateToPage(entery.key),
                 child: Container(

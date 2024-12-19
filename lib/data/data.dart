@@ -1,4 +1,3 @@
-import 'package:delivery_app/gen/assets.gen.dart';
 import 'package:delivery_app/models/category.dart';
 import 'package:delivery_app/models/category_child.dart';
 import 'package:delivery_app/models/filter.dart';
@@ -7,49 +6,49 @@ List<Category> categories = [
   Category(
     title : 'Vegetables',
     number : 43,
-    link: Assets.images.vegetables.path
+    link: 'assets/images/vegetables.jpg'
   ),
   Category(
     title : 'Fruites',
     number : 32,
-    link: Assets.images.orange1.path
+    link: 'assets/images/orange1.jpg'
   ),
   Category(
     title : 'Bread',
     number : 22,
-    link: Assets.images.bread.path
+    link: 'assets/images/bread.jpg'
   ),
   Category(
     title : 'Sweets',
     number : 56,
-    link: Assets.images.sweets.path
+    link: 'assets/images/sweets.jpg'
   ),
   Category(
     title : 'Vegetables',
     number : 43,
-    link: Assets.images.vegetables.path
+    link: 'assets/images/vegetables.jpg'
   ),
   Category(
     title : 'Fruites',
     number : 32,
-    link: Assets.images.orange1.path
+    link: 'assets/images/orange1.jpg'
   ),
   Category(
     title : 'Bread',
     number : 22,
-    link: Assets.images.bread.path
+    link: 'assets/images/bread.jpg'
   ),
   Category(
     title : 'Sweets',
     number : 56,
-    link: Assets.images.sweets.path
+    link: 'assets/images/sweets.jpg'
   ),
 ];
 
 List<Categorychild> categoryChildren = [
-  Categorychild(
+  Categorychild(  
     parent: 'Vegetables',
-    link: Assets.images.boston.path,
+    link: 'assets/images/boston.jpeg',
     title: 'Boston Lettuce',
     price: 1.10,
     quantity : 'piece',
@@ -57,7 +56,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.cabbage1.path,
+    link: 'assets/images/cabbage1.jpg',
     title: 'Savoy Cabbage',
     price: 1.45,
     quantity: 'kg',
@@ -65,7 +64,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.purpleCauliflower.path,
+    link: 'assets/images/purple_cauliflower.jpg',
     title: 'Purple Cauliflower',
     price: 1.85,
     quantity: 'kg',
@@ -73,7 +72,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.boston.path,
+    link: 'assets/images/boston.jpeg',
     title: 'Boston Lettuce',
     price: 1.10,
     quantity : 'piece',
@@ -81,7 +80,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.purpleCauliflower.path,
+    link: 'assets/images/purple_cauliflower.jpg',
     title: 'Purple Cauliflower',
     price: 1.85,
     quantity: 'kg',
@@ -89,7 +88,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.boston.path,
+    link: 'assets/images/boston.jpeg',
     title: 'Boston Lettuce',
     price: 1.10,
     quantity : 'piece',
@@ -97,7 +96,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.purpleCauliflower.path,
+    link: 'assets/images/purple_cauliflower.jpg',
     title: 'Purple Cauliflower',
     price: 1.85,
     quantity: 'kg',
@@ -105,7 +104,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.boston.path,
+    link: 'assets/images/boston.jpeg',
     title: 'Boston Lettuce',
     price: 1.10,
     quantity : 'piece',
@@ -113,7 +112,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.purpleCauliflower.keyName,
+    link: 'assets/images/purple_cauliflower.jpg',
     title: 'Purple Cauliflower',
     price: 1.85,
     quantity: 'kg',
@@ -121,7 +120,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.boston.path,
+    link: 'assets/images/boston.jpeg',
     title: 'Boston Lettuce',
     price: 1.10,
     quantity : 'piece',
@@ -129,7 +128,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.purpleCauliflower.path,
+    link: 'assets/images/purple_cauliflower.jpg',
     title: 'Purple Cauliflower',
     price: 1.85,
     quantity: 'kg',
@@ -137,7 +136,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.boston.path,
+    link: 'assets/images/boston.jpeg',
     title: 'Boston Lettuce',
     price: 1.10,
     quantity : 'piece',
@@ -145,7 +144,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.cabbage1.path,
+    link: 'assets/images/cabbage1.jpg',
     title: 'Savoy Cabbage',
     price: 1.45,
     quantity: 'kg',
@@ -153,7 +152,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Vegetables',
-    link: Assets.images.purpleCauliflower.path,
+    link: 'assets/images/purple_cauliflower.jpg',
     title: 'Purple Cauliflower',
     price: 1.85,
     quantity: 'kg',
@@ -161,7 +160,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Fruites',
-    link: Assets.images.orange1.path,
+    link: 'assets/images/orange1.jpg',
     title: 'Apple',
     price: 1.10,
     quantity : 'kg',
@@ -169,7 +168,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Fruites',
-    link: Assets.images.orange1.path,
+    link: 'assets/images/orange1.jpg',
     title: 'Banana',
     price: 1.45,
     quantity: 'kg',
@@ -177,7 +176,7 @@ List<Categorychild> categoryChildren = [
   ),
   Categorychild(
     parent: 'Fruites',
-    link: Assets.images.orange1.path,
+    link: 'assets/images/orange1.jpg',
     title: 'Orange',
     price: 1.85,
     quantity: 'kg',
@@ -209,7 +208,7 @@ List<Filter> filterChoices = [
 ];
 
 List<String> images = [
-  Assets.images.boston.path,
-  Assets.images.boston1.path,
-  Assets.images.boston2.path,
+  'assets/images/boston.jpeg',
+  'assets/images/boston1.jpeg',
+  'assets/images/boston2.jpeg',
 ];

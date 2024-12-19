@@ -1,5 +1,6 @@
-import 'package:delivery_app/data/data.dart';
+import 'package:delivery_app/API/http.dart';
 import 'package:delivery_app/gen/fonts.gen.dart';
+import 'package:delivery_app/models/category_child.dart';
 import 'package:delivery_app/widgets/navigation_bar.dart';
 import 'package:delivery_app/widgets/selected_category_screen/child_screen_contnt.dart';
 import 'package:flutter/material.dart';
@@ -30,12 +31,34 @@ class _ChildScreenState extends State<ChildScreen>{
     title = args['title']!;
   }
 
+  List<Categorychild> categoryChild = [];
+
+  @override
+  void initState(){
+    super.initState();
+    startApp();
+  }
+
+  void startApp() async {
+    final Api api = Api();
+
+    try {
+      var data = await api.fetchCategoryChild();
+      setState(() {
+        categoryChild = data;
+      });
+    } 
+    catch (e) {
+      categoryChild = [];
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
 
     Widget content = ChildScreenContent(title: title,);
     
-    var children = categoryChildren.where((child) => child.parent == title).toList();
+    var children = categoryChild.where((child) => child.parent == title).toList();
 
     if(children.isEmpty){
       content = Center(
