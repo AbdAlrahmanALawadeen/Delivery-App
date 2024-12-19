@@ -1,15 +1,17 @@
-import 'package:delivery_app/models/category.dart';
 import 'package:delivery_app/widgets/categories_screen_content.dart';
 import 'package:delivery_app/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CategoriesScreen extends StatelessWidget{
-  const CategoriesScreen({super.key, required this.categories});
+class CategoriesScreen extends StatefulWidget{
+  const CategoriesScreen({super.key,});
 
-  final List<Category> categories;
+  @override
+  State<CategoriesScreen> createState() => _CategoriesScreenState();
+}
 
+class _CategoriesScreenState extends State<CategoriesScreen> {
   @override
   Widget build(BuildContext context) {
       

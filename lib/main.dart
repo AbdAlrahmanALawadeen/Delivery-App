@@ -4,7 +4,6 @@ import 'package:delivery_app/widgets/category_children/details.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:delivery_app/data/data.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -21,13 +20,14 @@ class DeliveryApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ScreenUtilInit(
       designSize: const Size(414, 896),
       minTextAdapt: true,
       builder: (BuildContext context, child) => MaterialApp(
         initialRoute: '/',
         routes: {
-          '/' : (context) => CategoriesScreen(categories: categories),
+          '/' : (context) => const CategoriesScreen(),
           '/childScreen' : (context) => const ChildScreen(),
           '/details' : (context) => const ShowDetails(),
         },

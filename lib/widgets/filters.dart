@@ -1,4 +1,4 @@
-import 'package:delivery_app/data/data.dart';
+import 'package:delivery_app/API/http.dart';
 import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/models/filter.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +17,29 @@ class Filters extends StatefulWidget{
 }
 
 class _Filters extends State<Filters>{
+
+  List<Filter> filterChoices = [];
+
+  @override
+  void initState(){
+    super.initState();
+    startApp();
+  }
+
+  void startApp() async {
+    final Api api = Api();
+
+    try {
+      var data = await api.fetchFilters();
+      setState(() {
+        filterChoices = data;
+      });
+    } 
+    catch (e) {
+      filterChoices = [];
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
 
