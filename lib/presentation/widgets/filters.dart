@@ -1,6 +1,6 @@
-import 'package:delivery_app/API/http.dart';
+import 'package:delivery_app/data/web_services/http.dart';
 import 'package:delivery_app/gen/fonts.gen.dart';
-import 'package:delivery_app/models/filter.dart';
+import 'package:delivery_app/data/models/filter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,13 +1,14 @@
 import 'dart:convert';
-import 'package:delivery_app/models/category.dart';
-import 'package:delivery_app/models/category_child.dart';
-import 'package:delivery_app/models/filter.dart';
+import 'package:delivery_app/data/models/category.dart';
+import 'package:delivery_app/data/models/category_child.dart';
+import 'package:delivery_app/data/models/filter.dart';
+import 'package:delivery_app/gen/api.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
   Future<List<Category>> fetchCategories() async {
     try {
-      final response = await http.get(Uri.parse('http://10.10.9.196:3000/categories'));
+      final response = await http.get(Uri.parse('${baseUrl}categories'));
 
       List<Category> categories = [];
       if (response.statusCode == 200) {
@@ -28,7 +29,7 @@ class Api {
 
   Future<List<Categorychild>> fetchCategoryChild() async {
     try {
-      final response = await http.get(Uri.parse('http://10.10.9.196:3000/categoryChildren'));
+      final response = await http.get(Uri.parse('${baseUrl}categoryChildren'));
 
       List<Categorychild> categories = [];
       if (response.statusCode == 200) {
@@ -47,7 +48,7 @@ class Api {
 
   Future<List<Filter>> fetchFilters() async {
     try {
-      final response = await http.get(Uri.parse('http://10.10.9.196:3000/filterChoices'));
+      final response = await http.get(Uri.parse('${baseUrl}filterChoices'));
 
       List<Filter> filters = [];
       if (response.statusCode == 200) {
@@ -66,7 +67,7 @@ class Api {
 
   Future<List<String>> fetchImages() async {
     try {
-      final response = await http.get(Uri.parse('http://10.10.9.196:3000/images'));
+      final response = await http.get(Uri.parse('${baseUrl}images'));
 
       List<String> images = [];
       if (response.statusCode == 200) {

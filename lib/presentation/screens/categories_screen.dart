@@ -1,5 +1,5 @@
-import 'package:delivery_app/widgets/categories_screen_content.dart';
-import 'package:delivery_app/widgets/navigation_bar.dart';
+import 'package:delivery_app/presentation/widgets/categories_screen_content.dart';
+import 'package:delivery_app/presentation/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
