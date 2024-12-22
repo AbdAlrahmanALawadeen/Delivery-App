@@ -1,6 +1,6 @@
-import 'package:delivery_app/models/category.dart';
-import 'package:delivery_app/models/category_child.dart';
-import 'package:delivery_app/models/filter.dart';
+import 'package:delivery_app/data/models/category.dart';
+import 'package:delivery_app/data/models/category_child.dart';
+import 'package:delivery_app/data/models/filter.dart';
 
 List<Category> categories = [
   Category(

@@ -1,7 +1,7 @@
 import 'package:delivery_app/gen/fonts.gen.dart';
-import 'package:delivery_app/widgets/filters.dart';
-import 'package:delivery_app/widgets/search.dart';
-import 'package:delivery_app/widgets/selected_category_screen/category_children.dart';
+import 'package:delivery_app/presentation/widgets/filters.dart';
+import 'package:delivery_app/presentation/widgets/search.dart';
+import 'package:delivery_app/presentation/widgets/selected_category_screen/category_children.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
