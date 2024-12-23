@@ -1,7 +1,7 @@
 import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/data/models/category_child.dart';
-import 'package:delivery_app/presentation/widgets/category_children/description.dart';
-import 'package:delivery_app/presentation/widgets/category_children/images.dart';
+import 'package:delivery_app/presentation/widgets/selected_category_screen/category_children/description.dart';
+import 'package:delivery_app/presentation/widgets/selected_category_screen/category_children/images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

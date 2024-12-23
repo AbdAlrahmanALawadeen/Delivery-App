@@ -3,7 +3,7 @@ import 'package:delivery_app/data/respository/category_repository.dart';
 import 'package:delivery_app/data/web_services/dio.dart';
 import 'package:delivery_app/presentation/screens/categories_screen.dart';
 import 'package:delivery_app/presentation/screens/selected_category_screen.dart';
-import 'package:delivery_app/presentation/widgets/category_children/details.dart';
+import 'package:delivery_app/presentation/widgets/selected_category_screen/category_children/details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

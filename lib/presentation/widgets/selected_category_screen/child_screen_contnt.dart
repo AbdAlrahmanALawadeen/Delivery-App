@@ -1,3 +1,4 @@
+import 'package:delivery_app/gen/assets.gen.dart';
 import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/presentation/widgets/filters.dart';
 import 'package:delivery_app/presentation/widgets/search.dart';
@@ -30,7 +31,7 @@ class _ChildScreenContentState extends State<ChildScreenContent>{
             right: 0.0.h,
             top: -10.0.h,
             child: SvgPicture.asset(
-              'assets/images/Vector.svg',    
+              Assets.images.vector,    
               fit: BoxFit.cover,
             )
           ),
@@ -43,7 +44,7 @@ class _ChildScreenContentState extends State<ChildScreenContent>{
                 Navigator.of(context).pop();
               }, 
               icon: SvgPicture.asset(
-                'assets/images/arrow_back.svg',
+                Assets.images.arrowBack,
               ),
             )
           ),
@@ -75,7 +76,7 @@ class _ChildScreenContentState extends State<ChildScreenContent>{
 
           Positioned(
             top: 323.h,
-            child: Categorychildren(title : widget.title)
+            child: CategoryChildren(title : widget.title)
           ),
         ],
       )

@@ -25,6 +25,12 @@ class ImagesLoaded extends LocalState {
   ImagesLoaded(this.images);
 }
 
+class FiltersLoaded extends LocalState {
+  final List<Filter> filters;
+
+  FiltersLoaded(this.filters);
+}
+
 final class LocalError extends LocalState {
   final String message;
 

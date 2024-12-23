@@ -1,4 +1,4 @@
-import 'package:delivery_app/presentation/widgets/categories_screen_content.dart';
+import 'package:delivery_app/presentation/widgets/categpry_screen/categories_screen_content.dart';
 import 'package:delivery_app/presentation/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

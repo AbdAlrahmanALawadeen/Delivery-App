@@ -1,5 +1,5 @@
 import 'package:delivery_app/business_logic/cubit/local_cubit.dart';
-import 'package:delivery_app/presentation/widgets/category_item.dart';
+import 'package:delivery_app/presentation/widgets/categpry_screen/category_item.dart';
 import 'package:delivery_app/presentation/widgets/search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -45,4 +45,14 @@ class WebServices{
       return [];
     }
   }
+
+  Future<List<dynamic>> fetchFilters() async{
+    try{
+      Response response = await dio.get('filters');
+      return response.data;
+    }
+    catch(e){
+      return [];
+    }
+  }
 }
