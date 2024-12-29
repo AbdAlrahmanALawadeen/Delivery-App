@@ -1,6 +1,7 @@
 import 'package:delivery_app/business_logic/cubit/local_cubit.dart';
-import 'package:delivery_app/presentation/widgets/category_item.dart';
+import 'package:delivery_app/presentation/widgets/categories_screen/category_item.dart';
 import 'package:delivery_app/presentation/widgets/search.dart';
+import 'package:delivery_app/presentation/widgets/categories_screen/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,9 +33,7 @@ class _CategoriesScreenContentState extends State<CategoriesScreenContent> {
             child: BlocBuilder<LocalCubit, LocalState>(
               builder: (context, state) {
                 if (state is LocalLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
+                  return const Skeleton();
                 } 
                 else if (state is CategoriesLoaded) {
                   final categories = state.categories;

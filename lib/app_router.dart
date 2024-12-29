@@ -1,21 +1,16 @@
 import 'package:delivery_app/business_logic/cubit/local_cubit.dart';
+import 'package:delivery_app/core/dependency_injection.dart';
 import 'package:delivery_app/data/respository/category_repository.dart';
-import 'package:delivery_app/data/web_services/dio.dart';
 import 'package:delivery_app/presentation/screens/categories_screen.dart';
 import 'package:delivery_app/presentation/screens/selected_category_screen.dart';
-import 'package:delivery_app/presentation/widgets/category_children/details.dart';
+import 'package:delivery_app/presentation/widgets/category_child_details/details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
 
-  late CategoryRepository categoryRepository;
-  late LocalCubit localCubit;
-
-  AppRouter(){
-    categoryRepository = CategoryRepository(WebServices());
-    localCubit = LocalCubit(categoryRepository);
-  }
+  final categoryRepository = locator<CategoryRepository>();
+  final localCubit = locator<LocalCubit>();
 
   Route? generateRoute(RouteSettings settings){
     switch(settings.name){

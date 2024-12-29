@@ -20,7 +20,7 @@ class _Description extends State<Description>{
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width,
-      height: 615.h,
+      height: MediaQuery.sizeOf(context).height - 77.h,
       decoration: BoxDecoration(
         color: const Color.fromRGBO(246, 245, 245, 1),
         borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0.r), topRight: Radius.circular(20.0.r)),

@@ -1,7 +1,7 @@
 import 'package:delivery_app/business_logic/cubit/local_cubit.dart';
 import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/presentation/widgets/navigation_bar.dart';
-import 'package:delivery_app/presentation/widgets/selected_category_screen/child_screen_contnt.dart';
+import 'package:delivery_app/presentation/widgets/selected_category_screen/category_screen_contnt.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
