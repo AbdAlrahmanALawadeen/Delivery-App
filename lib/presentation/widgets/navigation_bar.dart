@@ -1,3 +1,4 @@
+import 'package:delivery_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -31,15 +32,15 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       backgroundColor: Colors.white,
       destinations: [
         NavigationDestination(
-          icon: SvgPicture.asset('assets/images/grid.svg', height: 24.h, width: 24.w),
+          icon: SvgPicture.asset(Assets.images.grid, height: 24.h, width: 24.w),
           label: 'Grid',
         ),
         NavigationDestination(
-          icon: SvgPicture.asset('assets/images/shopping-cart1.svg', height: 24.h, width: 24.w),
+          icon: SvgPicture.asset(Assets.images.shoppingCart1, height: 24.h, width: 24.w),
           label: 'Cart',
         ),
         NavigationDestination(
-          icon: SvgPicture.asset('assets/images/user.svg', height: 24.h, width: 24.w),
+          icon: SvgPicture.asset(Assets.images.user, height: 24.h, width: 24.w),
           label: 'User',
         ),
       ],

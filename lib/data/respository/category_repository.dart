@@ -1,9 +1,13 @@
+import 'package:delivery_app/core/dependency_injection.dart';
 import 'package:delivery_app/data/models/category.dart';
 import 'package:delivery_app/data/models/category_child.dart';
+import 'package:delivery_app/data/models/filter.dart';
 import 'package:delivery_app/data/web_services/dio.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class CategoryRepository {
-  final WebServices webServices;
+  var webServices = locator<WebServices>();
   CategoryRepository(this.webServices);
 
   Future<List<Category>> fetchCategories() async{
@@ -19,5 +23,10 @@ class CategoryRepository {
   Future<List> fetchImages() async{
     final images = await webServices.fetchImages();
     return images; 
+  }
+
+  Future<List<Filter>> fetchFilters() async {
+    final filters = await webServices.fetchFilters();
+    return filters.map((filter) => Filter.fromJson(filter)).toList(); 
   }
 }

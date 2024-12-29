@@ -1,6 +1,8 @@
 import 'package:delivery_app/gen/api.dart';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class WebServices{
   late Dio dio;
 
@@ -39,6 +41,16 @@ class WebServices{
   Future<List<dynamic>> fetchImages() async{
     try{
       Response response = await dio.get('images');
+      return response.data;
+    }
+    catch(e){
+      return [];
+    }
+  }
+
+  Future<List<dynamic>> fetchFilters() async{
+    try{
+      Response response = await dio.get('filters');
       return response.data;
     }
     catch(e){

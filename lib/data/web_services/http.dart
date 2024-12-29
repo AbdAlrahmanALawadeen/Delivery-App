@@ -3,6 +3,7 @@ import 'package:delivery_app/data/models/category.dart';
 import 'package:delivery_app/data/models/category_child.dart';
 import 'package:delivery_app/data/models/filter.dart';
 import 'package:delivery_app/gen/api.dart';
+import 'package:delivery_app/gen/error.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
@@ -20,10 +21,10 @@ class Api {
         }
         return categories;
       } else {
-        throw Exception('Failed to fetch categories: ${response.statusCode} - ${response.reasonPhrase}');
+        throw Exception('$FAILED_FETCH_CATEGORIES_EXCEPTION: ${response.statusCode} - ${response.reasonPhrase}');
       }
     } catch (e) {
-      return Future.error('Error fetching categories: $e');
+      return Future.error('$FAILED_FETCH_CATEGORIES_EXCEPTION: $e');
     }
   }
 
@@ -39,10 +40,10 @@ class Api {
         }
         return categories;
       } else {
-        throw Exception('Failed to fetch category children: ${response.statusCode} - ${response.reasonPhrase}');
+        throw Exception('$FAILED_FETCH_CATEGORY_CHILDREN_EXCEPTION: ${response.statusCode} - ${response.reasonPhrase}');
       }
     } catch (e) {
-      return Future.error('Error fetching category children: $e');
+      return Future.error('$FAILED_FETCH_CATEGORY_CHILDREN_EXCEPTION: $e');
     }
   }
 
@@ -58,10 +59,10 @@ class Api {
         }
         return filters;
       } else {
-        throw Exception('Failed to fetch filters: ${response.statusCode} - ${response.reasonPhrase}');
+        throw Exception('$FAILED_FETCH_FILTERS_EXCEPTION: ${response.statusCode} - ${response.reasonPhrase}');
       }
     } catch (e) {
-      return Future.error('Error fetching filters: $e');
+      return Future.error('$FAILED_FETCH_FILTERS_EXCEPTION: $e');
     }
   }
 
@@ -77,10 +78,10 @@ class Api {
         }
         return images;
       } else {
-        throw Exception('Failed to fetch images: ${response.statusCode} - ${response.reasonPhrase}');
+        throw Exception('$FAILED_FETCH_IMAGES_EXCEPTION: ${response.statusCode} - ${response.reasonPhrase}');
       }
     } catch (e) {
-      return Future.error('Error fetching images: $e');
+      return Future.error('$FAILED_FETCH_IMAGES_EXCEPTION: $e');
     }
   }
 }

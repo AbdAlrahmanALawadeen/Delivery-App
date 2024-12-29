@@ -1,3 +1,4 @@
+import 'package:delivery_app/gen/assets.gen.dart';
 import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +17,7 @@ class Search extends StatelessWidget{
           prefixIcon: Padding(
               padding: const EdgeInsets.all(12.0),
               child: SvgPicture.asset(
-                'assets/images/search.svg',
+                Assets.images.search,
                 width: 20.0, 
                 height: 20.0, 
               ),

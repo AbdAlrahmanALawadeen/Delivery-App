@@ -1,8 +1,12 @@
+import 'package:delivery_app/business_logic/cubit/filters_cubit.dart';
+import 'package:delivery_app/core/dependency_injection.dart';
+import 'package:delivery_app/gen/assets.gen.dart';
 import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/presentation/widgets/filters.dart';
 import 'package:delivery_app/presentation/widgets/search.dart';
 import 'package:delivery_app/presentation/widgets/selected_category_screen/category_children.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -30,7 +34,7 @@ class _ChildScreenContentState extends State<ChildScreenContent>{
             right: 0.0.h,
             top: -10.0.h,
             child: SvgPicture.asset(
-              'assets/images/Vector.svg',    
+              Assets.images.vector,    
               fit: BoxFit.cover,
             )
           ),
@@ -43,7 +47,7 @@ class _ChildScreenContentState extends State<ChildScreenContent>{
                 Navigator.of(context).pop();
               }, 
               icon: SvgPicture.asset(
-                'assets/images/arrow_back.svg',
+                Assets.images.arrowBack,
               ),
             )
           ),
@@ -55,6 +59,7 @@ class _ChildScreenContentState extends State<ChildScreenContent>{
               widget.title,
               style: TextStyle(
                 fontFamily: FontFamily.sFProDisplay,
+                color: const Color.fromRGBO(45, 12, 87, 1),
                 fontSize: 30.sp,
                 fontWeight: FontWeight.w700,
               ),
@@ -68,14 +73,17 @@ class _ChildScreenContentState extends State<ChildScreenContent>{
             child: const Search(),
           ),
 
-          Positioned(
+           Positioned(
             top: 250.h,
-            child: Filters(parent: widget.title,)
+            child: BlocProvider(
+              create: (_) => FiltersCubit(locator()),
+              child: Filters(parent: widget.title),
+            ),
           ),
 
           Positioned(
             top: 323.h,
-            child: Categorychildren(title : widget.title)
+            child: CategoryChildren(title : widget.title)
           ),
         ],
       )
