@@ -1,5 +1,6 @@
 import 'package:delivery_app/business_logic/cubit/filters_cubit.dart';
-import 'package:delivery_app/core/dependency_injection.dart';
+import 'package:delivery_app/core/di.dart';
+import 'package:delivery_app/data/respository/category_repository.dart';
 import 'package:delivery_app/gen/assets.gen.dart';
 import 'package:delivery_app/gen/fonts.gen.dart';
 import 'package:delivery_app/presentation/widgets/filters.dart';
@@ -10,20 +11,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ChildScreenContent extends StatefulWidget{
+class ChildScreenContent extends StatefulWidget {
   const ChildScreenContent({super.key, required this.title});
 
   final String title;
 
   @override
-  State<ChildScreenContent> createState() {
-    return _ChildScreenContentState();
-  }
-
+  State<ChildScreenContent> createState() => _ChildScreenContentState();
 }
 
-class _ChildScreenContentState extends State<ChildScreenContent>{
-
+class _ChildScreenContentState extends State<ChildScreenContent> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,24 +31,22 @@ class _ChildScreenContentState extends State<ChildScreenContent>{
             right: 0.0.h,
             top: -10.0.h,
             child: SvgPicture.asset(
-              Assets.images.vector,    
+              Assets.images.vector,
               fit: BoxFit.cover,
-            )
+            ),
           ),
-
           Positioned(
             left: -20.0.w,
             top: 42.h,
-            child: IconButton(       
-              onPressed: (){
+            child: IconButton(
+              onPressed: () {
                 Navigator.of(context).pop();
-              }, 
+              },
               icon: SvgPicture.asset(
                 Assets.images.arrowBack,
               ),
-            )
+            ),
           ),
-
           Positioned(
             top: 97.h,
             left: 0.0.w,
@@ -63,30 +58,28 @@ class _ChildScreenContentState extends State<ChildScreenContent>{
                 fontSize: 30.sp,
                 fontWeight: FontWeight.w700,
               ),
-            )
+            ),
           ),
-
           Positioned(
             top: 165.h,
             right: 10.h,
             left: 0.h,
             child: const Search(),
           ),
-
-           Positioned(
+          Positioned(
             top: 250.h,
             child: BlocProvider(
-              create: (_) => FiltersCubit(locator()),
+              create: (_) => FiltersCubit(locator<CategoryRepository>()),
               child: Filters(parent: widget.title),
             ),
           ),
 
           Positioned(
             top: 323.h,
-            child: CategoryChildren(title : widget.title)
+            child: CategoryChildren(title: widget.title),
           ),
         ],
-      )
+      ),
     );
   }
 }

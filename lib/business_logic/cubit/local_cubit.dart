@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:delivery_app/core/dependency_injection.dart';
 import 'package:delivery_app/data/models/category.dart';
 import 'package:delivery_app/data/models/category_child.dart';
 import 'package:delivery_app/data/respository/category_repository.dart';
@@ -11,8 +10,7 @@ part 'local_state.dart';
 
 @injectable
 class LocalCubit extends Cubit<LocalState> {
-  var categoryRepository = locator<CategoryRepository>();
-
+  final CategoryRepository categoryRepository;
   LocalCubit(this.categoryRepository) : super(LocalInitial());
 
   Future<void> fetchCategories() async {

@@ -1,19 +1,19 @@
-class Categorychild {
-  late String title;
-  late double price;
-  late String link;
-  late String parent;
-  late String quantity;
-  late String description;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  Categorychild.fromJson(Map<String, dynamic> json){
-    title = json['title'];
-    price = json['price'];
-    link = json['link'];
-    parent = json['parent'];
-    quantity = json['quantity'];
-    description = json['description'];
-  }
+part 'category_child.freezed.dart';
+part 'category_child.g.dart';
 
-  Categorychild({required this.title, required this.price, required this.link, required this.parent, required this.quantity, required this.description});
+@freezed
+class Categorychild with _$Categorychild {
+  const factory Categorychild({
+    required String title,
+    required double price,
+    required String link,
+    required String parent,
+    required String quantity,
+    required String description,
+  }) = _Categorychild;
+
+  factory Categorychild.fromJson(Map<String, dynamic> json) =>
+      _$CategorychildFromJson(json);
 }
