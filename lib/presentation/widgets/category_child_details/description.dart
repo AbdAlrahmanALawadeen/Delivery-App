@@ -101,9 +101,9 @@ class _Description extends State<Description>{
             
             SizedBox(height: 16.h,),
             
-            SizedBox(
-              height: 194.h,
-              child: SingleChildScrollView(
+            SingleChildScrollView(
+              child: SizedBox(
+                height: 150.h,
                 child: Text(
                   widget.categoryChild.description ,
                   style: TextStyle(

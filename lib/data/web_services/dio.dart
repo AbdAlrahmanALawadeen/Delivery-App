@@ -15,7 +15,7 @@ class WebServices{
 
     );
     dio = Dio(options);
-  }
+  } 
 
   Future<List<dynamic>> fetchCategories() async{
     try{
